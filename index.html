@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Patel | Data Scientist & Analyst</title>
+    
+    <!-- Google Fonts: Space Grotesk (Tech) and Syne (Creative) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN for instant usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Configuration for Neobrutalism -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-bg': '#f0f0f0',
+                        'neo-black': '#121212',
+                        'neo-yellow': '#FFDE00',
+                        'neo-pink': '#FF90E8',
+                        'neo-blue': '#5C95FF',
+                        'neo-green': '#B8FF9F',
+                        'neo-orange': '#FF6B6B',
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neo': '5px 5px 0px 0px rgba(0,0,0,1)',
+                        'neo-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+                        'neo-sm': '3px 3px 0px 0px rgba(0,0,0,1)',
+                        'neo-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f3f4f6;
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff;
+            border-left: 2px solid black;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000;
+            border: 2px solid white;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Selection styling */
+        ::selection {
+            background: #FFDE00;
+            color: black;
+        }
+    </style>
+</head>
+<body class="text-neo-black font-sans antialiased selection:bg-neo-pink selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 px-4 py-4 mix-blend-difference text-white pointer-events-none">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <h1 class="font-display font-bold text-xl md:text-2xl tracking-tighter uppercase pointer-events-auto cursor-pointer hover:scale-110 transition-transform">AP.</h1>
+            <div class="pointer-events-auto flex gap-4 text-sm font-bold uppercase">
+                <a href="#work" class="hover:underline decoration-wavy underline-offset-4">Work</a>
+                <a href="#projects" class="hover:underline decoration-wavy underline-offset-4">Projects</a>
+                <a href="#contact" class="hover:underline decoration-wavy underline-offset-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center items-center relative pt-20 px-4 border-b-4 border-black bg-neo-bg">
+        
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-20 left-10 w-16 h-16 bg-neo-blue border-2 border-black shadow-neo rounded-full animate-bounce delay-100 hidden md:block"></div>
+        <div class="absolute bottom-20 right-10 w-24 h-24 bg-neo-pink border-2 border-black shadow-neo rotate-12 hidden md:block"></div>
+        
+        <div class="text-center z-10">
+            <div class="inline-block bg-neo-yellow border-2 border-black px-4 py-1 mb-4 shadow-neo transform -rotate-2 font-bold uppercase tracking-widest text-xs md:text-sm reveal-text">
+                Based in Delhi, India
+            </div>
+            
+            <h1 class="font-display font-extrabold text-6xl md:text-9xl leading-[0.9] tracking-tighter mb-6">
+                ADITYA<br>
+                <span class="text-stroke text-transparent bg-clip-text bg-gradient-to-r from-neo-black to-neo-black" style="-webkit-text-stroke: 2px black; color: transparent;">PATEL</span>
+            </h1>
+            
+            <p class="max-w-xl mx-auto text-lg md:text-xl font-medium mb-8 leading-relaxed reveal-text bg-white border-2 border-black p-4 shadow-neo-sm rotate-1">
+                Results-driven <span class="bg-neo-green px-1 border border-black">Data Analyst</span> & <span class="bg-neo-blue px-1 border border-black text-white">ML Engineer</span> turning raw data into actionable intelligence.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 reveal-text">
+                <a href="mailto:adityapateljr@gmail.com" class="group relative px-8 py-3 bg-neo-black text-white font-bold text-lg border-2 border-black shadow-neo hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                    Hire Me
+                    <span class="absolute top-0 right-0 -mt-2 -mr-2 w-4 h-4 bg-neo-orange border-2 border-black rounded-full group-hover:animate-ping"></span>
+                </a>
+                <a href="#projects" class="px-8 py-3 bg-white text-black font-bold text-lg border-2 border-black shadow-neo hover:bg-neo-yellow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
+                    View Work
+                </a>
+            </div>
+        </div>
+
+        <!-- Scrolling Marquee -->
+        <div class="absolute bottom-0 left-0 w-full bg-neo-yellow border-t-4 border-black py-3 marquee-container">
+            <div class="marquee-content font-display font-black text-2xl uppercase tracking-widest">
+                PYTHON • SQL • MACHINE LEARNING • POWER BI • PREDICTIVE ANALYTICS • DATA VISUALIZATION • NLP • PANDAS • NUMPY •&nbsp;
+                PYTHON • SQL • MACHINE LEARNING • POWER BI • PREDICTIVE ANALYTICS • DATA VISUALIZATION • NLP • PANDAS • NUMPY •&nbsp;
+            </div>
+        </div>
+    </header>
+
+    <!-- About & Skills Section -->
+    <section class="py-20 px-4 bg-white pattern-grid">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <!-- About Card -->
+            <div class="relative group" id="about-card">
+                <div class="absolute inset-0 bg-neo-black translate-x-2 translate-y-2 border-2 border-black"></div>
+                <div class="relative bg-neo-pink border-2 border-black p-8 h-full flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-display font-bold text-4xl mb-6 flex items-center gap-2">
+                            <i data-lucide="user" class="w-8 h-8"></i> ABOUT_ME:
+                        </h2>
+                        <p class="text-lg font-medium leading-relaxed mb-4">
+                            I build ML models, dashboards, and data pipelines. Proficient in Python, SQL, and Power BI. 
+                        </p>
+                        <p class="text-base border-t-2 border-black pt-4 mt-4">
+                            Currently pursuing B.Tech in IT at <span class="font-bold">Buddha Institute of Technology</span> (CGPA: 6.73).
+                        </p>
+                    </div>
+                    <div class="mt-8 flex gap-3">
+                        <a href="#" class="p-2 bg-white border-2 border-black shadow-neo-sm hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] transition-all"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="p-2 bg-white border-2 border-black shadow-neo-sm hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] transition-all"><i data-lucide="github"></i></a>
+                        <a href="#" class="p-2 bg-white border-2 border-black shadow-neo-sm hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] transition-all"><i data-lucide="mail"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div>
+                <h2 class="font-display font-bold text-4xl mb-8 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-8 h-8"></i> TECH_STACK
+                </h2>
+                <div class="flex flex-wrap gap-3" id="skills-container">
+                    <!-- Skills will be animated -->
+                    <span class="skill-tag bg-neo-blue">Python</span>
+                    <span class="skill-tag bg-neo-yellow">SQL</span>
+                    <span class="skill-tag bg-neo-green">Power BI</span>
+                    <span class="skill-tag bg-neo-orange text-white">Machine Learning</span>
+                    <span class="skill-tag bg-white">Pandas</span>
+                    <span class="skill-tag bg-white">NumPy</span>
+                    <span class="skill-tag bg-neo-pink">Matplotlib</span>
+                    <span class="skill-tag bg-white">MySQL</span>
+                    <span class="skill-tag bg-neo-black text-white">NLP</span>
+                    <span class="skill-tag bg-white">Regression</span>
+                    <span class="skill-tag bg-neo-yellow">Jupyter</span>
+                    <span class="skill-tag bg-neo-blue">C Language</span>
+                    <span class="skill-tag bg-white">Excel</span>
+                    <span class="skill-tag bg-neo-green">EDA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="work" class="py-20 px-4 bg-neo-yellow border-y-4 border-black relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(black 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <h2 class="font-display font-black text-5xl md:text-7xl mb-12 text-center uppercase tracking-tighter bg-white border-2 border-black inline-block px-6 py-2 shadow-neo transform -rotate-1 mx-auto block">
+                Experience
+            </h2>
+
+            <div class="relative pl-8 md:pl-0">
+                <!-- Timeline Line -->
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-black transform md:-translate-x-1/2"></div>
+
+                <!-- Job Item -->
+                <div class="mb-12 flex flex-col md:flex-row items-center justify-between w-full experience-item">
+                    <div class="order-1 md:w-5/12 text-left md:text-right mb-4 md:mb-0">
+                        <h3 class="font-bold text-2xl bg-white border-2 border-black inline-block px-3 py-1 shadow-neo-sm">Scortek India PVT LTD.</h3>
+                        <p class="text-sm font-mono mt-2 font-bold">July 2024 - August 2024</p>
+                    </div>
+                    
+                    <div class="z-20 flex items-center order-1 bg-black border-4 border-white w-8 h-8 rounded-full shadow-neo-sm"></div>
+                    
+                    <div class="order-1 md:w-5/12 bg-white border-2 border-black p-6 shadow-neo hover:shadow-neo-lg transition-shadow duration-300">
+                        <h4 class="font-display font-bold text-xl mb-2 text-neo-blue">Data Science Intern</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-sm font-medium">
+                            <li>Cleaned large datasets ensuring accuracy.</li>
+                            <li>Designed interactive Power BI dashboards for KPIs.</li>
+                            <li>Performed SQL queries for extraction & reporting.</li>
+                            <li>Developed Heart Disease Prediction model using ML.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-neo-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16 border-b-4 border-black pb-4">
+                <h2 class="font-display font-black text-6xl md:text-8xl">PROJECTS</h2>
+                <div class="hidden md:block text-right font-mono text-sm">
+                    // SELECTED WORKS<br>
+                    // 2021 - 2025
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="project-card group relative h-full">
+                    <div class="absolute inset-0 bg-black translate-x-3 translate-y-3 rounded-none"></div>
+                    <div class="relative bg-white border-2 border-black p-6 h-full flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                        <div>
+                            <div class="bg-neo-orange border-2 border-black px-3 py-1 text-xs font-bold inline-block mb-4 shadow-neo-sm text-white">NLP & ML</div>
+                            <h3 class="font-display font-bold text-3xl mb-3 leading-none">Fake News Detection</h3>
+                            <p class="text-sm text-gray-700 mb-4 border-l-4 border-neo-orange pl-3">
+                                Predictive model to identify and flag false information using NLP and Data Mining techniques.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Python</span>
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Sklearn</span>
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Pandas</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-2 bg-black text-white font-bold uppercase border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-colors">
+                            View Code
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card group relative h-full mt-8 md:mt-0">
+                    <div class="absolute inset-0 bg-black translate-x-3 translate-y-3 rounded-none"></div>
+                    <div class="relative bg-white border-2 border-black p-6 h-full flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                        <div>
+                            <div class="bg-neo-blue border-2 border-black px-3 py-1 text-xs font-bold inline-block mb-4 shadow-neo-sm text-white">API Integration</div>
+                            <h3 class="font-display font-bold text-3xl mb-3 leading-none">Stock/Weather Forecast</h3>
+                            <p class="text-sm text-gray-700 mb-4 border-l-4 border-neo-blue pl-3">
+                                Forecasting stock prices using Historical data and technical indicators with Machine Learning.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Python</span>
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Tkinter</span>
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">OpenWeatherMap</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-2 bg-black text-white font-bold uppercase border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-colors">
+                            View Code
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card group relative h-full mt-8 lg:mt-0">
+                    <div class="absolute inset-0 bg-black translate-x-3 translate-y-3 rounded-none"></div>
+                    <div class="relative bg-white border-2 border-black p-6 h-full flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-2 group-hover:-translate-x-2">
+                        <div>
+                            <div class="bg-neo-green border-2 border-black px-3 py-1 text-xs font-bold inline-block mb-4 shadow-neo-sm">Healthcare</div>
+                            <h3 class="font-display font-bold text-3xl mb-3 leading-none">Human Diagnostic</h3>
+                            <p class="text-sm text-gray-700 mb-4 border-l-4 border-neo-green pl-3">
+                                ML-based health diagnostic system to predict patient risk for chronic diseases enabling early care.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Keras</span>
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">OpenCV</span>
+                                <span class="text-xs font-mono bg-gray-200 px-2 py-1 border border-black">Scikit-learn</span>
+                            </div>
+                        </div>
+                        <button class="w-full py-2 bg-black text-white font-bold uppercase border-2 border-transparent hover:bg-white hover:text-black hover:border-black transition-colors">
+                            View Code
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certs -->
+    <section class="py-20 px-4 bg-neo-green border-t-4 border-black">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display font-black text-4xl mb-10 inline-block border-b-4 border-black pb-2">CERTIFICATES & AWARDS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-black p-6 shadow-neo transform rotate-1 hover:rotate-0 transition-transform">
+                    <i data-lucide="award" class="w-10 h-10 mb-4 mx-auto text-neo-orange"></i>
+                    <h3 class="font-bold text-xl mb-2">2nd Position - Techyuva</h3>
+                    <p class="text-sm">Health Diagnostic Project Competition</p>
+                </div>
+                <div class="bg-white border-2 border-black p-6 shadow-neo transform -rotate-1 hover:rotate-0 transition-transform">
+                    <i data-lucide="file-check" class="w-10 h-10 mb-4 mx-auto text-neo-blue"></i>
+                    <h3 class="font-bold text-xl mb-2">Data Science Internship</h3>
+                    <p class="text-sm">1-Month Intensive at Scortek India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-neo-black text-white pt-20 pb-10 px-4 border-t-4 border-black relative">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-neo-yellow via-neo-pink to-neo-blue"></div>
+        
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-10 md:mb-0">
+                <h2 class="font-display font-black text-6xl md:text-8xl mb-4 leading-none hover:text-neo-yellow transition-colors cursor-pointer">
+                    LET'S<br>TALK.
+                </h2>
+                <p class="text-xl font-mono text-gray-400">mahipalpur extension, delhi, 110037</p>
+            </div>
+            
+            <div class="flex flex-col gap-4 w-full md:w-auto">
+                <a href="tel:+919621642924" class="bg-white text-black font-bold text-lg px-8 py-4 border-2 border-white hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(255,222,0,1)] hover:shadow-none">
+                    +91 9621642924
+                </a>
+                <a href="mailto:adityapateljr@gmail.com" class="bg-neo-yellow text-black font-bold text-lg px-8 py-4 border-2 border-neo-yellow hover:bg-black hover:text-neo-yellow transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-none">
+                    adityapateljr@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-20 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-mono text-gray-500">
+            <p>&copy; 2025 Aditya Patel. No Rights Reserved. Copy This.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">LINKEDIN</a>
+                <a href="#" class="hover:text-white">GITHUB</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Animation & Logic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- Animations ---
+
+        // Hero Text Reveal
+        gsap.from(".reveal-text", {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+
+        // About Card Tilt
+        gsap.from("#about-card", {
+            scrollTrigger: {
+                trigger: "#about-card",
+                start: "top 80%",
+            },
+            x: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "elastic.out(1, 0.5)"
+        });
+
+        // Skill Tags Stagger
+        gsap.from(".skill-tag", {
+            scrollTrigger: {
+                trigger: "#skills-container",
+                start: "top 85%",
+            },
+            y: 20,
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            stagger: 0.05,
+            ease: "back.out(1.7)"
+        });
+
+        // Experience Item Animation
+        gsap.utils.toArray('.experience-item').forEach(item => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                },
+                x: -50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+
+        // Project Cards Stagger
+        gsap.from(".project-card", {
+            scrollTrigger: {
+                trigger: "#projects",
+                start: "top 70%",
+            },
+            y: 100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // Marquee Scroll Effect (Speed up/Slow down based on scroll velocity)
+        /* 
+           Simple logic: standard CSS animation handles base movement.
+           We could add complex JS to skew text on scroll for extra "brutalism"
+        */
+        
+        // Add random slight rotation to skill tags on hover using vanilla JS
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.classList.add('px-3', 'py-2', 'border-2', 'border-black', 'font-bold', 'text-sm', 'cursor-default', 'shadow-neo-sm', 'hover:shadow-none', 'hover:translate-x-[2px]', 'hover:translate-y-[2px]', 'transition-all');
+            
+            tag.addEventListener('mouseenter', () => {
+                const rot = Math.random() * 10 - 5; // random between -5 and 5
+                tag.style.transform = `rotate(${rot}deg) scale(1.1)`;
+            });
+            tag.addEventListener('mouseleave', () => {
+                tag.style.transform = `rotate(0deg) scale(1)`;
+            });
+        });
+
+    </script>
+</body>
+</html>
